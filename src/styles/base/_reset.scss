@@ -1,0 +1,202 @@
+/*
+1. Prevent padding and border from affecting element width.
+2. Allow adding a border to an element by just adding a border-width.
+*/
+
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  box-sizing: border-box;
+  border-color: currentColor;
+}
+
+/*
+Make scrollbars invisible by default
+*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+Reset font properties and apply smooth scrolling
+*/
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  scroll-behavior: smooth;
+}
+
+/*
+Reset body styling
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  tab-size: 4;
+  line-height: 1.5;
+  text-size-adjust: 100%;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari.
+2. Correct table border color inheritance in all Chrome and Safari.
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+/*
+Removes the default spacing for text elements.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/*
+Reset styling for lists
+ */
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing text areas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+Reset the default placeholder opacity in Firefox.
+*/
+
+input::placeholder, textarea::placeholder {
+  opacity: 1;
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled elements don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+Constrain images to the parent width and preserve their intrinsic aspect ratio.
+*/
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Make fieldset elements have no padding and margin.
+*/
+fieldset {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+Make hidden elements be hidden by default
+ */
+[hidden] {
+  display: none !important;
+}

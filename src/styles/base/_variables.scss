@@ -1,0 +1,69 @@
+$fonts: (
+  "heading": ("Raleway", sans-serif),
+  "default": ("Outfit", sans-serif)
+);
+
+$colors: (
+  "absolute": (
+    white: #FFFFFF,
+    black: #000000,
+  ),
+  "orange": (
+    100: #FFFCFA,
+    200: #FFF5F0,
+    300: #FFEFE5,
+    400: #FFDECC,
+    500: #FFBE99,
+    600: #FFAE80,
+    700: #FF9E66,
+    800: #FF8D4C
+  ),
+  "gray": (
+    100: #B3B3B3,
+    200: #98989A,
+    300: #656567,
+    400: #59595A,
+    500: #4C4C4D,
+    600: #333333,
+    700: #262626,
+    800: #191919
+  )
+);
+
+$radiuses: (
+  "mn": 0,
+  "xs": 4px,
+  "sm": 6px,
+  "md": 8px,
+  "lg": 10px,
+  "xl": 12px,
+  "mx": 100%
+);
+
+$breakpoints: (
+  "sm": 0,
+  "md": 1440px,
+  "lg": 1920px
+);
+
+$weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800
+);
+
+$leading: (
+  "sm": 1,
+  "md": 1.3,
+  "lg": 1.5
+);
+
+$images: (
+  "abstract": (
+    "squares": "/abstract/squares.png",
+    "clouds": "/abstract/clouds.png",
+    "globe": "/abstract/globe.png",
+  )
+);

@@ -1,0 +1,133 @@
+@use "src/styles/utilities";
+
+.page {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("absolute", white);
+    box-shadow: utilities.box-shadow("gray", 700);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 60px;
+    gap: 60px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 80px;
+    gap: 80px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.page__head {
+  @include utilities.base() {
+    text-align: center;
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+}
+
+.page__name {
+  @include utilities.base() {
+    font-family: utilities.family("heading");
+    font-weight: utilities.weight("bold");
+    line-height: utilities.leading("md");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 28px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 34px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 48px;
+  }
+}
+
+.page__line {
+  @include utilities.base() {
+    border-bottom: utilities.border("gray", 700, 1px, dashed);
+  }
+}
+
+.page__text {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+.page__link {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("md");
+    box-shadow: utilities.box-shadow("gray", 700);
+    background: utilities.color("orange", 400);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-block: 16px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-block: 18px;
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-block: 20px;
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+  }
+}

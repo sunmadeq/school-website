@@ -1,0 +1,120 @@
+@use "src/styles/utilities";
+
+.event {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    background: utilities.color("absolute", white);
+    box-shadow: utilities.box-shadow("gray", 700);
+    border: utilities.border("gray", 700);
+    border-radius: 12px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+    gap: 50px;
+  }
+}
+
+.event__image {
+  @include utilities.base() {
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.event::before {
+  @include utilities.base() {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    height: 90px;
+
+    background: utilities.color("orange", 300);
+    outline: utilities.border("gray", 700);
+  }
+}
+
+.event__body {
+  @include utilities.base() {
+    display: grid;
+    text-align: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 12px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 20px;
+  }
+}
+
+.event__title {
+  @include utilities.base() {
+    font-family: "Raleway", sans-serif;
+    font-weight: utilities.weight("bold");
+    line-height: utilities.leading("md");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 22px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 28px;
+  }
+}
+
+.event__description {
+  @include utilities.base() {
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}

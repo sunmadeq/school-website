@@ -1,0 +1,15 @@
+@use "src/styles/base/variables" as *;
+
+@mixin base() {
+  @content;
+}
+
+@mixin children() {
+  @content;
+}
+
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

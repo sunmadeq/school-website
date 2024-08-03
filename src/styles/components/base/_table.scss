@@ -1,0 +1,121 @@
+@use "src/styles/utilities";
+
+table {
+  @include utilities.base() {
+    display: grid;
+    overflow: scroll;
+    word-break: break-all;
+    gap: 30px;
+
+    background: utilities.color("absolute", white);
+    box-shadow: utilities.box-shadow("gray", 700);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 50px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 60px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+thead {
+  @include utilities.base() {
+    background: utilities.color("orange", 300);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+tbody {
+  @include utilities.base() {
+    background: utilities.color("orange", 100);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      border-top: utilities.border("gray", 700);
+    }
+  }
+}
+
+th {
+  @include utilities.base() {
+    text-align: start;
+    color: utilities.color("gray", 700);
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    width: 100%;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 18px 30px;
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 20px 34px;
+    font-size: 20px;
+  }
+}
+
+tr {
+  @include utilities.base() {
+    display: flex;
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      border-left: utilities.border("gray", 700);
+    }
+  }
+}
+
+td {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    outline: utilities.color("gray", 700);
+    color: utilities.color("gray", 700);
+    width: 100%;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 24px 30px;
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 30px 34px;
+    font-size: 20px;
+  }
+}

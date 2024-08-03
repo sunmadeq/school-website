@@ -1,0 +1,256 @@
+@use "src/styles/utilities";
+
+.introduction {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 60px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.introduction__image {
+  @include utilities.base() {
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
+.introduction > :last-child {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 60px;
+  }
+}
+
+.introduction__body {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 18px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    text-align: center;
+  }
+
+  @include utilities.breakpoint("md") {
+    text-align: start;
+  }
+}
+
+.introduction__head {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 12px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 14px;
+  }
+}
+
+.introduction__underline {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.base() {
+    text-underline-offset: 6px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 22px;
+  }
+}
+
+.introduction__title {
+  @include utilities.base() {
+    font-family: utilities.family("heading");
+    font-weight: utilities.weight("extrabold");
+    line-height: utilities.leading("md");
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 54px;
+  }
+
+  @include utilities.children() {
+    & > :first-child {
+      color: utilities.color("gray", 800);
+    }
+
+    & > :last-child {
+      color: utilities.color("orange", 800);
+    }
+  }
+}
+
+.introduction__text {
+  @include utilities.base() {
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+.introduction__card {
+  @include utilities.base() {
+    display: grid;
+
+    box-shadow: utilities.box-shadow("orange", 500);
+    background: utilities.color("orange", 300);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+    padding: 40px 40px;
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    border-radius: 10px;
+    padding: 20px 40px;
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+    padding: 24px 50px;
+    gap: 14px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    text-align: center;
+  }
+
+  @include utilities.breakpoint("md") {
+    text-align: start;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.introduction__card > :nth-child(n) {
+  @include utilities.children() {
+    & > :first-child {
+      @include utilities.base() {
+        font-weight: utilities.weight("extrabold");
+        line-height: utilities.leading("lg");
+        color: utilities.color("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 34px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 44px;
+      }
+    }
+
+    & > :last-child {
+      @include utilities.base() {
+        font-weight: utilities.weight("medium");
+        line-height: utilities.leading("lg");
+        color: utilities.color("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 16px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.introduction__card > :nth-child(2n) {
+  @include utilities.base() {
+    height: 1px;
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("md") {
+    display: none;
+  }
+}

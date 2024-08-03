@@ -1,0 +1,137 @@
+@use "src/styles/utilities";
+
+.feature {
+  @include utilities.base() {
+    display: grid;
+    position: relative;
+    justify-items: center;
+    background: utilities.color("absolute", white);
+    box-shadow: utilities.box-shadow("gray", 700);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.feature::before {
+  @include utilities.base() {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+    width: 25%;
+    height: 70%;
+
+    transform: translateX(-50%);
+
+    background: utilities.color("orange", 300);
+    outline: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
+
+.feature__image {
+  @include utilities.base() {
+    border: utilities.border("gray", 700);
+    object-position: center;
+    object-fit: cover;
+    position: relative;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.feature__body {
+  @include utilities.base() {
+    display: grid;
+    text-align: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 20px;
+  }
+}
+
+.feature__name {
+  @include utilities.base() {
+    font-weight: utilities.weight("bold");
+    font-family: utilities.family("heading");
+    line-height: utilities.leading("md");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 22px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 28px;
+  }
+}
+
+.feature__text {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    font-family: utilities.family("default");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}

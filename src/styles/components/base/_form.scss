@@ -1,0 +1,291 @@
+@use "src/styles/utilities";
+
+.form {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.children() {
+    & > * + * {
+      margin-top: -30px;
+    }
+  }
+}
+
+.form__header {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+
+  @include utilities.children() {
+    & > a {
+      @include utilities.base() {
+        box-sizing: content-box;
+
+        background: utilities.color("orange", 400);
+        border: utilities.border("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        padding: 16px 24px;
+      }
+
+      @include utilities.breakpoint("md") {
+        padding: 16px 50px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        padding: 20px 60px;
+      }
+
+      @include utilities.breakpoint("sm") {
+        border-radius: 6px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.form__content {
+  @include utilities.base() {
+    background: utilities.color("absolute", white);
+    box-shadow: utilities.box-shadow("gray", 700);
+    border: utilities.border("gray", 700);
+
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 80px 30px 30px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 100px 80px 80px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 120px 100px 100px;
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.form__field {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 8px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 10px;
+  }
+}
+
+.form__fieldset {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form__label {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 22px;
+  }
+}
+
+.form__input {
+  @include utilities.base() {
+    background: utilities.color("orange", 100);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 400);
+
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    font-size: 20px;
+  }
+}
+
+.form__select {
+  @include utilities.base() {
+    background: utilities.color("orange", 100);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 400);
+
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    font-size: 20px;
+  }
+}
+
+.form__textarea {
+  @include utilities.base() {
+    background: utilities.color("orange", 100);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 400);
+
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 30px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    font-size: 20px;
+  }
+}
+
+.form__message {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 600);
+    line-height: 18px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 16px;
+  }
+}
+
+.form__submit {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: utilities.weight("meidum");
+    background: utilities.color("orange", 600);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-block: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-block: 24px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-block: 30px;
+    border-radius: 12px;
+    font-size: 24px;
+  }
+}

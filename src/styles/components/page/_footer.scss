@@ -1,0 +1,452 @@
+@use "src/styles/utilities";
+
+.footer {
+  @include utilities.base() {
+    display: grid;
+    border: utilities.border("gray", 700);
+    box-shadow: utilities.box-shadow("gray", 700);
+    background: utilities.color("absolute", white);
+    border-radius: 12px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 60px 30px 30px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 80px 80px 30px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 100px 100px 40px;
+    gap: 50px;
+  }
+}
+
+.footer > :first-child {
+  @include utilities.base() {
+    display: flex;
+  }
+
+  @include utilities.breakpoint("sm") {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("md") {
+    flex-direction: row;
+    gap: 80px;
+  }
+}
+
+.footer__head {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 50px;
+  }
+}
+
+.footer__header {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include utilities.breakpoint("sm") {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    justify-content: start;
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("md") {
+    align-items: start;
+  }
+}
+
+.footer__logo {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 4px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 6px;
+  }
+
+  @include utilities.children() {
+    & > :first-child {
+      @include utilities.base() {
+        color: utilities.color("gray", 800);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    & > :last-child {
+      @include utilities.base() {
+        color: utilities.color("gray", 700);
+        font-weight: 600;
+        line-height: 0.8;
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 16px;
+      }
+
+      @include utilities.breakpoint("md") {
+        font-size: 18px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.footer__text {
+  @include utilities.base() {
+    color: utilities.color("gray", 500);
+    font-weight: 500;
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    text-align: center;
+  }
+
+  @include utilities.breakpoint("md") {
+    text-align: start;
+  }
+}
+
+.footer__contacts {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+}
+
+.footer__contacts > div {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 10px;
+  }
+
+  @include utilities.children() {
+    & > :first-child {
+      @include utilities.base() {
+        box-sizing: content-box;
+        border: utilities.border("gray", 700);
+        background: utilities.color("orange", 200);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        padding: 6px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        padding: 8px;
+      }
+    }
+
+    & > :last-child {
+      @include utilities.base() {
+        color: utilities.color("gray", 700);
+        font-weight: 500;
+      }
+
+      @include utilities.breakpoint("sm") {
+        font-size: 16px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.footer__navigation {
+  @include utilities.base() {
+    display: grid;
+    row-gap: 50px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+  }
+}
+
+.footer__navigation div {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 24px;
+  }
+}
+
+.footer__navigation p {
+  @include utilities.base() {
+    font-weight: 600;
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+.footer__navigation nav {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 14px;
+  }
+}
+
+.footer__navigation a {
+  @include utilities.base() {
+    font-weight: 500;
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
+
+.footer > :last-child {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 30px;
+  }
+}
+
+.footer__copyright {
+  @include utilities.base() {
+    text-align: center;
+    color: utilities.color("gray", 300);
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("md");
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+  }
+}
+
+.footer__legal {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 18px;
+    gap: 16px;
+  }
+
+  @include utilities.children() {
+    & > div {
+      width: 1px;
+      height: 24px;
+      border-left: utilities.border("gray", 700, 1px);
+    }
+  }
+}
+
+.footer__media {
+  @include utilities.base() {
+    display: flex;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 14px;
+  }
+}
+
+.footer__media > a {
+  @include utilities.base() {
+    background: utilities.color("orange", 400);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 12px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 16px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+  }
+
+  @include utilities.children() {
+    & > svg {
+      @include utilities.base() {
+        color: utilities.color("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.footer__links {
+  @include utilities.base() {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer__separator {
+  @include utilities.base() {
+    width: 100%;
+    height: 1px;
+    border-top: utilities.border("gray", 700);
+  }
+}

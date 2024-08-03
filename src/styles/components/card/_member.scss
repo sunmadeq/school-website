@@ -1,0 +1,213 @@
+@use "src/styles/utilities";
+
+.member {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("absolute", white);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 30px;
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 40px;
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 50px;
+    gap: 30px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.member__head {
+  @include utilities.base() {
+    display: flex;
+    align-items: center;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 12px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 16px;
+  }
+}
+
+.member__image {
+  @include utilities.base() {
+    box-sizing: content-box;
+    object-fit: cover;
+    object-position: center;
+    background: utilities.color("orange", 200);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    width: 60px;
+    height: 60px;
+  }
+
+  @include utilities.breakpoint("md") {
+    width: 80px;
+    height: 80px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 100px;
+    height: 100px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 10px;
+  }
+}
+
+.member__name {
+  @include utilities.base() {
+    flex-grow: 1;
+    font-weight: utilities.weight("extrabold");
+    font-family: utilities.family("heading");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 24px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 30px;
+  }
+}
+
+.member__icon {
+  @include utilities.base() {
+    display: grid;
+    place-content: center;
+    box-sizing: content-box;
+    background: utilities.color("orange", 400);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 14px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 16px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 10px;
+  }
+
+  @include utilities.children() {
+    svg {
+      @include utilities.base() {
+        color: utilities.color("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.member__body {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("orange", 200);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+}
+
+.member__qualification {
+  @include utilities.base() {
+    font-weight: utilities.weight("semibold");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 24px;
+  }
+}
+
+.member__description {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}

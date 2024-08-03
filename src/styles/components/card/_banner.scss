@@ -1,0 +1,210 @@
+@use "src/styles/utilities";
+
+.banner {
+  @include utilities.base() {
+    display: grid;
+    position: relative;
+    border: utilities.border("gray", 700);
+    box-shadow: utilities.box-shadow("gray", 700);
+    background: utilities.color("absolute", white);
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+    padding: 50px 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 50px;
+    padding: 100px 80px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 50px;
+    padding: 150px 120px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.banner::before {
+  @include utilities.base() {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background: center / contain utilities.image-url("/abstract/squares.png");
+  }
+
+  @include utilities.breakpoint("sm") {
+    width: 100px;
+    height: 100px;
+  }
+
+  @include utilities.breakpoint("md") {
+    width: 140px;
+    height: 140px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.banner__header {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include utilities.breakpoint("sm") { gap: 10px; }
+  @include utilities.breakpoint("lg") { gap: 14px; }
+
+  @include utilities.breakpoint("sm") { align-items: center; }
+  @include utilities.breakpoint("md") { align-items: start; }
+}
+
+.banner__body {
+  @include utilities.base() { display: grid; }
+  @include utilities.breakpoint("sm") { gap: 30px; }
+  @include utilities.breakpoint("lg") { gap: 50px; }
+}
+
+.banner__badge {
+  @include utilities.base() {
+    color: utilities.color("gray", 600);
+    border: utilities.border("gray", 700);
+    background: utilities.color("absolute", white);
+    font-weight: utilities.weight("medium");
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 6px;
+    padding: 8px 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+
+  @include utilities.breakpoint("sm") { font-size: 14px; }
+  @include utilities.breakpoint("md") { font-size: 16px; }
+  @include utilities.breakpoint("lg") { font-size: 18px; }
+}
+
+.banner__title {
+  @include utilities.base() {
+    line-height: utilities.leading("md");
+    font-weight: utilities.weight("bold");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") { font-size: 26px; }
+  @include utilities.breakpoint("md") { font-size: 38px; }
+  @include utilities.breakpoint("lg") { font-size: 48px; }
+
+  @include utilities.breakpoint("sm") { text-align: center; }
+  @include utilities.breakpoint("md") { text-align: start; }
+}
+
+.banner__description {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") { font-size: 16px; }
+  @include utilities.breakpoint("lg") { font-size: 20px; }
+
+  @include utilities.breakpoint("sm") { text-align: center; }
+  @include utilities.breakpoint("md") { text-align: start; }
+}
+
+.banner__contacts {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 20px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 24px;
+  }
+
+  @include utilities.breakpoint("md") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.banner__contact {
+  @include utilities.base() {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background: utilities.color("orange", 100);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 700);
+
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  @include utilities.children() {
+    & > svg {
+      @include utilities.base() {
+        box-sizing: content-box;
+
+        background: utilities.color("orange", 200);
+        border: utilities.border("gray", 700);
+        color: utilities.color("gray", 700);
+      }
+
+      @include utilities.breakpoint("sm") {
+        border-radius: 4px;
+        padding: 6px;
+        width: 20px;
+        height: 20px;
+      }
+
+      @include utilities.breakpoint("lg") {
+        border-radius: 6px;
+        padding: 8px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

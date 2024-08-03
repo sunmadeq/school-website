@@ -1,0 +1,99 @@
+@use "src/styles/utilities";
+
+.plan {
+  @include utilities.base() {
+    display: grid;
+    background: utilities.color("absolute", white);
+    border: utilities.border("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 50px;
+    gap: 50px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 60px;
+    gap: 60px;
+  }
+}
+
+.plan__head {
+  @include utilities.base() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.plan__name {
+  @include utilities.base() {
+    font-family: utilities.family("heading");
+    font-weight: utilities.weight("bold");
+    line-height: utilities.leading("md");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 38px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 48px;
+  }
+}
+
+.plan__icon {
+  @include utilities.base() {
+    object-position: center;
+    object-fit: contain;
+  }
+
+  @include utilities.breakpoint("sm") {
+    width: 50px;
+    height: 50px;
+  }
+
+  @include utilities.breakpoint("md") {
+    width: 60px;
+    height: 60px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.plan__body {
+  @include utilities.base() {
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 600);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}

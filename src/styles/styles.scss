@@ -1,0 +1,54 @@
+@use "base";
+@use "components";
+@use "utilities";
+
+html {
+  background: utilities.color("orange", 200);
+}
+
+body {
+  @include utilities.base() {
+    margin-inline: auto;
+    max-width: 1920px;
+    width: 100%;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-inline: 16px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-inline: 50px;
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-inline: 50px;
+    padding-top: 18px;
+    padding-bottom: 50px;
+  }
+}
+
+main {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding-block: 40px 80px;
+    gap: 80px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding-block: 40px 150px;
+    gap: 150px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding-block: 60px 200px;
+    gap: 200px;
+  }
+}

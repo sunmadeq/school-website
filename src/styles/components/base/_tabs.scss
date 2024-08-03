@@ -1,0 +1,68 @@
+@use "src/styles/utilities";
+
+.tabs {
+  @include utilities.base() {
+    display: grid;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 80px;
+  }
+
+  @include utilities.breakpoint("md") {
+    gap: 120px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 150px;
+  }
+}
+
+.tabs__list {
+  @include utilities.base() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @include utilities.breakpoint("sm") {
+    gap: 10px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    gap: 16px;
+  }
+}
+
+.tabs__trigger {
+  @include utilities.base() {
+    border: utilities.border("gray", 600);
+    color: utilities.color("gray", 800);
+    line-height: utilities.leading("md");
+    font-weight: utilities.weight("semibold");
+    white-space: nowrap;
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+
+  @include utilities.children() {
+    &[data-active=true] {
+      background: utilities.color("orange", 300);
+    }
+
+    &[data-active=false] {
+      background: utilities.color("absolute", white);
+    }
+  }
+}

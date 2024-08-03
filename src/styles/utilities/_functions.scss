@@ -1,0 +1,33 @@
+@use "src/styles/base/variables" as *;
+
+@function family($type) {
+  @return map-get($fonts, $type);
+}
+
+@function radius($radius) {
+  @return map-get($radiuses, $radius);
+}
+
+@function color($color, $shade) {
+  @return map-get(map-get($colors, $color), $shade);
+}
+
+@function border($color, $shade, $width: 2px, $style: solid) {
+  @return $width $style color($color, $shade);
+}
+
+@function weight($weight) {
+  @return map-get($weights, $weight);
+}
+
+@function image-url($path) {
+  @return url($path);
+}
+
+@function box-shadow($color, $shade, $offset: 6px, $blur: 0px, $spread: 1px) {
+  @return $offset $offset $blur $spread color($color, $shade);
+}
+
+@function leading($size) {
+  @return map-get($leading, $size);
+}

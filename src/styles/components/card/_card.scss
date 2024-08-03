@@ -1,0 +1,110 @@
+@use "src/styles/utilities";
+
+.card {
+  @include utilities.base() {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include utilities.children() {
+    & > :first-child {
+      margin-left: 24px;
+      margin-bottom: -30px;
+      z-index: 10;
+    }
+  }
+}
+
+.card__body {
+  @include utilities.base() {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: utilities.color("absolute", white);
+    border: utilities.border("gray", 700);
+    box-shadow: utilities.box-shadow("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    padding: 50px 30px 30px;
+  }
+
+  @include utilities.breakpoint("md") {
+    padding: 60px 40px 40px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    padding: 80px 50px 50px;
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 10px;
+    gap: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+    gap: 20px;
+  }
+}
+
+.card__icon {
+  @include utilities.base() {
+    box-sizing: content-box;
+    background: utilities.color("orange", 400);
+    border: utilities.border("gray", 700);
+    color: utilities.color("gray", 700);
+  }
+
+  @include utilities.breakpoint("sm") {
+    border-radius: 8px;
+    padding: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    border-radius: 12px;
+    padding: 20px;
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.card__name {
+  @include utilities.base() {
+    font-family: "Raleway", sans-serif;
+    font-weight: utilities.weight("bold");
+    line-height: utilities.leading("md");
+    color: utilities.color("gray", 800);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 22px;
+  }
+
+  @include utilities.breakpoint("md") {
+    font-size: 24px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 28px;
+  }
+}
+
+.card__text {
+  @include utilities.base() {
+    font-family: "Outfit", sans-serif;
+    font-weight: utilities.weight("medium");
+    line-height: utilities.leading("lg");
+    color: utilities.color("gray", 500);
+  }
+
+  @include utilities.breakpoint("sm") {
+    font-size: 16px;
+  }
+
+  @include utilities.breakpoint("lg") {
+    font-size: 20px;
+  }
+}
